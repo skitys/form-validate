@@ -1,0 +1,358 @@
+@charset "UTF-8";
+​
+/* ==========================================================================
+コンポーネント
+========================================================================== */
+​
+/* ==========================================================================
+txt
+========================================================================== */
+.c-txt {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 1em;
+}
+​
+.c-fwBold {
+  font-weight: bold;
+}
+​
+.c-italic {
+  font-style: italic;
+}
+​
+.c-fsXL {
+  font-size: 24px;
+}
+​
+.c-fsL {
+  font-size: 22px;
+}
+​
+.c-fsBase1 {
+  font-size: 16px;
+}
+​
+.c-fsBase2 {
+  font-size: 14px;
+}
+​
+.c-fsS {
+  font-size: 12px;
+}
+​
+.c-fsXS {
+  font-size: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .c-txt {
+    font-size: 18px;
+    line-height: 1.667;
+  }
+​
+  .c-fsXL {
+    font-size: 26px;
+  }
+​
+  .c-fsL {
+    font-size: 24px;
+  }
+​
+  .c-fsBase1 {
+    font-size: 18px;
+  }
+​
+  .c-fsBase2 {
+    font-size: 16px;
+  }
+​
+  .c-fsS {
+    font-size: 14px;
+  }
+​
+  .c-fsXS {
+    font-size: 12px;
+  }
+}
+​
+/* ==========================================================================
+column
+========================================================================== */
+.c-column {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+​
+.c-column__item,
+.c-column__item--col2,
+.c-column__item--col3 {
+  width: 100%;
+}
+​
+.c-column__item,
+.c-column__item--col2,
+.c-column__item--col2B,
+.c-column__item--col3,
+.c-column__item--col4 {
+  margin-bottom: 1%;
+}
+​
+.c-column__item--col2B {
+  width: 49%;
+}
+​
+.c-column__item--col2B:nth-of-type(even) {
+  margin-left: auto;
+}
+​
+.c-column__item--col4 {
+  width: 49.5%;
+}
+
+@media screen and (max-width: 767px) {
+  .c-column__item--col4:nth-of-type(even) {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .c-column {
+    margin-bottom: 30px;
+  }
+​
+  .c-column__item--col2 {
+    width: 49%;
+  }
+​
+  .c-column__item--col2:nth-of-type(even) {
+    margin-left: auto;
+  }
+​
+  .c-column__item--col3 {
+    width: 32%;
+  }
+​
+  .c-column__item--col3:not(:nth-of-type(3n)) {
+    margin-right: 2%;
+  }
+​
+  .c-column__item--col4 {
+    width: 24.25%;
+  }
+​
+  .c-column__item--col4:not(:nth-of-type(4n)) {
+    margin-right: 1%;
+  }
+}
+​
+/* ==========================================================================
+imgWrap
+========================================================================== */
+.c-imgWrap {
+  margin-bottom: 53px;
+}
+​
+.c-imgWrap--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+​
+.c-imgWrap--radius img {
+  border-radius: 10px;
+}
+​
+.c-imgWrap--circle {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+​
+.c-imgWrap--circle img {
+  max-width: inherit;
+}
+​
+.c-imgWrap--max {
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+}
+​
+.c-imgWrap--max img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .c-imgWrap {
+    margin-bottom: 42px;
+  }
+​
+  .c-imgWrap--circle {
+    width: 240px;
+    height: 240px;
+  }
+}
+​
+/* ==========================================================================
+oList
+========================================================================== */
+.c-oList {
+  counter-reset: listNum 0;
+  margin-bottom: 20px;
+}
+​
+.c-oList .c-oList {
+  margin-bottom: 0;
+}
+​
+.c-oList>li {
+  display: table;
+  line-height: 1.6875;
+}
+​
+.c-oList>li::before {
+  counter-increment: listNum 1;
+  content: counters(listNum, "-") ".";
+  padding-right: 10px;
+  display: table-cell;
+}
+​
+.c-oList>li:not(:first-child) {
+  margin-top: 20px;
+}
+​
+.c-oList>li .c-oList>li {
+  margin-top: 10px;
+}
+​
+.c-oList>li .c-oList>li::before {
+  width: 3em;
+}
+
+@media screen and (min-width: 768px) {
+  .c-oList {
+    margin-bottom: 30px;
+  }
+​
+  .c-oList>li {
+    line-height: 1.778;
+  }
+​
+  .c-oList>li:not(:first-child) {
+    margin-top: 30px;
+  }
+​
+  .c-oList>li .c-oList>li {
+    margin-top: 20px;
+  }
+}
+​
+/* ==========================================================================
+uList
+========================================================================== */
+.c-uList {
+  margin-bottom: 20px;
+}
+​
+.c-uList .c-uList {
+  margin-bottom: 0;
+}
+​
+.c-uList>li {
+  display: table;
+  line-height: 1.6875;
+}
+​
+.c-uList>li::before {
+  content: "●";
+  padding-right: 10px;
+  display: table-cell;
+}
+​
+.c-uList>li:not(:first-child) {
+  margin-top: 20px;
+}
+​
+.c-uList>li .c-uList>li {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .c-uList {
+    margin-bottom: 30px;
+  }
+​
+  .c-uList>li {
+    line-height: 1.778;
+  }
+​
+  .c-uList>li:not(:first-child) {
+    margin-top: 30px;
+  }
+​
+  .c-uList>li .c-uList>li {
+    margin-top: 20px;
+  }
+}
+​
+/* ==========================================================================
+noteList
+========================================================================== */
+.c-noteList,
+.c-noteList--order {
+  margin-bottom: 20px;
+}
+​
+.c-noteList li {
+  display: table;
+  font-size: 13px;
+  line-height: 1.77;
+}
+​
+.c-noteList li::before {
+  content: "※";
+  padding-right: 10px;
+  display: table-cell;
+}
+​
+.c-noteList>li:not(:first-child) {
+  margin-top: 20px;
+}
+​
+.c-noteList--order {
+  counter-reset: noteNum 0;
+}
+​
+.c-noteList--order>li::before {
+  counter-increment: noteNum 1;
+  content: "※" counter(noteNum);
+}
+
+@media screen and (min-width: 768px) {
+  .c-noteList li {
+    font-size: 14px;
+  }
+}
+​
+/* ==========================================================================
+maru
+========================================================================== */
+.c-maru {
+  display: inline-block;
+  color: #fff;
+  width: 1.5556em;
+  line-height: 1.5556;
+  background-color: #BBC1D0;
+  border-radius: 100%;
+  text-align: center;
+}
